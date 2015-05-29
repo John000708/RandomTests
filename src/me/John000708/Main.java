@@ -70,21 +70,58 @@ public class Main extends JavaPlugin{
                 this.saveConfig();
             }
         }
+        //Starts the drops.
         if(cmd.equalsIgnoreCase("dropstart")){
             drop = true;
             sender.sendMessage(ChatColor.GREEN + "Dropping started");
         }
 
+        //Stops the drops.
         if(cmd.equalsIgnoreCase("dropstop")){
             reloadConfig();
             drop = false;
             sender.sendMessage(ChatColor.GREEN + "Dropping stopped");
         }
 
-
+        //Show a block at the setdrop location TODO: Make it refreshable without a reload needed
         if(cmd.equalsIgnoreCase("show")) {
-
             Bukkit.getWorld(world).getBlockAt(x,y,z).setType(Material.WOOL);
+        }
+
+        //Give Items to the player.
+        if(cmd.equalsIgnoreCase("giveitem")){
+
+            if(!(sender instanceof Player)){
+                sender.sendMessage("You need to be a player to execute this command!");
+            }
+
+            if(args.length == 0){
+                sender.sendMessage("You need to specify an item!");
+                return false;
+            }
+
+            Player p = (Player)sender;
+            if(args[0].equalsIgnoreCase("MINER")){
+                p.getInventory().addItem(Items.MINER);
+                p.updateInventory();
+                return true;
+            }
+            else if(args[0].equalsIgnoreCase("CHIP")){
+                p.getInventory().addItem(Items.CHIP);
+                p.sendMessage("fgvaga");
+                p.updateInventory();
+                return true;
+            }
+            else if(args[0].equalsIgnoreCase("SILVER")){
+                p.getInventory().addItem(Items.SILVER);
+                p.updateInventory();
+                return true;
+            }
+            else if(args[0].equalsIgnoreCase("SOLAR_FURNACE")) {
+                p.getInventory().addItem(Items.SOLAR_FURNANCE);
+                p.updateInventory();
+                return true;
+            }
         }
         return true;
 
