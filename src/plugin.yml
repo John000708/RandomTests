@@ -1,0 +1,10 @@
+main: me.John000708.Main
+name: EntityTest
+author: John000708
+version: 0.1
+
+commands:
+  setdrop:
+  dropstart:
+  dropstop:
+  show:
