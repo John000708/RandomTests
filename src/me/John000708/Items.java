@@ -14,6 +14,7 @@ public class Items {
     public static ItemStack MINER;
     public static ItemStack CHIP;
     public static ItemStack SILVER;
+    public static ItemStack SOLAR_FURNANCE;
 
     private static ItemMeta meta;
 
@@ -40,6 +41,13 @@ public class Items {
         meta.setDisplayName(ChatColor.BLUE + "Silver");
         meta.addEnchant(Enchantment.DAMAGE_ALL, 5, true);
         SILVER.setItemMeta(meta);
+
+        /* Solar Furnance */
+        SOLAR_FURNANCE = new ItemStack(Material.FURNACE);
+        meta = SOLAR_FURNANCE.getItemMeta();
+        meta.setDisplayName(ChatColor.AQUA + "Solar Furnace");
+        meta.setLore(Arrays.asList(ChatColor.DARK_PURPLE + "A furnace that charges from the sun!"));
+        SOLAR_FURNANCE.setItemMeta(meta);
     }
 
 
