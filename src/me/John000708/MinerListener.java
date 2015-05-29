@@ -40,7 +40,4 @@ public class MinerListener implements Listener {
             Bukkit.broadcastMessage("Item reached the floor.");
         }
     }
-    public boolean blockBreakEvent(BlockBreakEvent e){
-        if(e.)
-    }
 }
