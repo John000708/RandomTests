@@ -42,11 +42,4 @@ public class MinerListener implements Listener {
             Bukkit.broadcastMessage("Item reached the floor.");
         }
     }
-    @EventHandler
-    public void onInventoryPlaceEvent(InventoryClickEvent e){
-        if(e.getInventory() instanceof FurnaceInventory){
-            Furnace f = (Furnace)e.getInventory().getHolder();
-            if(f.getFacing())
-        }
-    }
 }
