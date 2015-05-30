@@ -28,6 +28,7 @@ public class Main extends JavaPlugin{
     public void onEnable(){
         this.getServer().getPluginManager().registerEvents(new OreListener(), this);
         this.getServer().getPluginManager().registerEvents(new MinerListener(), this);
+        this.getServer().getPluginManager().registerEvents(new FurnaceListener(), this);
         c.options().copyDefaults(true);
         plugin = this;
         Items.load();
