@@ -117,11 +117,6 @@ public class Main extends JavaPlugin{
                 p.updateInventory();
                 return true;
             }
-            else if(args[0].equalsIgnoreCase("SOLAR_FURNACE")) {
-                p.getInventory().addItem(Items.SOLAR_FURNANCE);
-                p.updateInventory();
-                return true;
-            }
         }
         return true;
 
