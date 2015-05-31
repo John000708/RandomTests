@@ -10,16 +10,18 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
+import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.inventory.InventoryOpenEvent;
+import org.bukkit.inventory.FurnaceInventory;
 
 /**
  * Created by John on 30-May-15.
  */
 public class FurnaceListener implements Listener{
     @EventHandler
-    public void onOpenInventory(InventoryOpenEvent e){
+    public void onOpenInventory(InventoryClickEvent e){
         if(e.getInventory().getName().equals(ChatColor.GOLD + "Solar Furnace")){
-            e.getPlayer().sendMessage("galkg;lgs");
+            FurnaceInventory inv = (FurnaceInventory)e.getInventory();
         }
     }
     @EventHandler

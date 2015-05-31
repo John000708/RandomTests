@@ -29,10 +29,13 @@ public class Main extends JavaPlugin{
         this.getServer().getPluginManager().registerEvents(new OreListener(), this);
         this.getServer().getPluginManager().registerEvents(new MinerListener(), this);
         this.getServer().getPluginManager().registerEvents(new FurnaceListener(), this);
+        this.getServer().getPluginManager().registerEvents(new JuiceListener(), this);
         c.options().copyDefaults(true);
         plugin = this;
         Items.load();
         Recipes.load();
+
+        //Dropitem start.
         scheduler.scheduleSyncRepeatingTask(this, new Runnable(){
             @Override
         public void run(){
@@ -44,6 +47,11 @@ public class Main extends JavaPlugin{
                 }
             }
         }, 0L, 40L);
+        scheduler.scheduleSyncRepeatingTask(this, new Runnable(){
+            public void run(){
+
+            }
+        }, 0, 1L);
 
     }
     public void onDisable() {

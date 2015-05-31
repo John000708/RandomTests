@@ -15,6 +15,7 @@ public class Items {
     public static ItemStack CHIP;
     public static ItemStack SILVER;
     public static ItemStack SOLAR_FURNACE;
+    public static ItemStack RAGE_JUICE;
 
     private static ItemMeta meta;
 
@@ -47,6 +48,12 @@ public class Items {
         meta = SOLAR_FURNACE.getItemMeta();
         meta.setDisplayName(ChatColor.GOLD + "Solar Furnace");
         SOLAR_FURNACE.setItemMeta(meta);
+
+        /* RAGE_JUICE */
+        RAGE_JUICE = new ItemStack(Material.POTION);
+        meta = RAGE_JUICE.getItemMeta();
+        meta.setDisplayName(ChatColor.DARK_RED + "RAGE JUIIIIIIIIIICE!");
+        RAGE_JUICE.setItemMeta(meta);
 
     }
 

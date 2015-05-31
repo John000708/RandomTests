@@ -10,6 +10,7 @@ public class Recipes {
     public static ShapedRecipe MINER;
     public static ShapedRecipe CHIP;
     public static ShapelessRecipe SOLAR_FURNACE;
+    public static ShapelessRecipe RAGE_JUICE;
 
     protected static void load(){
 
@@ -28,11 +29,18 @@ public class Recipes {
         SOLAR_FURNACE = new ShapelessRecipe(Items.SOLAR_FURNACE);
         SOLAR_FURNACE.addIngredient(1, Material.FURNACE);
         SOLAR_FURNACE.addIngredient(1, Material.DAYLIGHT_DETECTOR);
+
+        /* RAGE_JUICE */
+        RAGE_JUICE = new ShapelessRecipe(Items.RAGE_JUICE);
+        RAGE_JUICE.addIngredient(1, Material.LAVA_BUCKET);
+        RAGE_JUICE.addIngredient(1, Material.GLASS_BOTTLE);
+
         inject();
     }
     private static void inject(){
         Bukkit.addRecipe(MINER);
         Bukkit.addRecipe(CHIP);
         Bukkit.addRecipe(SOLAR_FURNACE);
+        Bukkit.addRecipe(RAGE_JUICE);
     }
 }
