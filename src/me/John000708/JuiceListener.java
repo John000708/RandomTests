@@ -14,11 +14,10 @@ import org.bukkit.potion.PotionEffectType;
 public class JuiceListener implements Listener {
     @EventHandler
     public void onPlayerConsume(PlayerItemConsumeEvent e) {
-        if (e.getItem().equals(Material.POTION) && e.getItem().getItemMeta().getDisplayName().equals(ChatColor.DARK_RED + "RAGE JUIIIIIIIIIICE!")) {
+        if(e.getItem().getType().equals(Material.POTION) && e.getItem().getItemMeta().getDisplayName().equals(ChatColor.DARK_RED + "RAGE JUIIIIIIIIIICE!"))
             e.getPlayer().sendMessage(ChatColor.GREEN + "Has");
             e.getPlayer().sendMessage(ChatColor.GREEN + "Has");
             e.getPlayer().sendMessage(ChatColor.GREEN + "Yas");
             e.getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 20*20, 5, true));
-        }
     }
 }

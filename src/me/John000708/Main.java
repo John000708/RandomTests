@@ -46,7 +46,7 @@ public class Main extends JavaPlugin{
 
                 }
             }
-        }, 0L, 40L);
+        }, 0L, 5L);
         scheduler.scheduleSyncRepeatingTask(this, new Runnable(){
             public void run(){
 

@@ -30,6 +30,7 @@ public class MinerListener implements Listener {
             }
         }
     }
+    /*
     @EventHandler
     public void onItemDropEvent(ItemSpawnEvent e){
         if(e.getEntity().getItemStack().equals(Items.SILVER)){
@@ -42,4 +43,5 @@ public class MinerListener implements Listener {
             Bukkit.broadcastMessage("Item reached the floor.");
         }
     }
+    */
 }
