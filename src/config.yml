@@ -2,3 +2,6 @@ droplocation:
    x:
    y:
    z:
+
+furnace:
+  count:

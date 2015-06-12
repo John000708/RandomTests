@@ -53,6 +53,7 @@ public class Items {
         RAGE_JUICE = new ItemStack(Material.POTION);
         meta = RAGE_JUICE.getItemMeta();
         meta.setDisplayName(ChatColor.DARK_RED + "RAGE JUIIIIIIIIIICE!");
+        meta.addEnchant(Enchantment.DAMAGE_ALL, 10, true);
         RAGE_JUICE.setItemMeta(meta);
 
     }

@@ -9,16 +9,12 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.bukkit.scheduler.BukkitScheduler;
-
-import java.util.HashMap;
 
 
 public class Main extends JavaPlugin{
     public static Main plugin;
     FileConfiguration c = this.getConfig();
     boolean drop = false;
-    BukkitScheduler scheduler = Bukkit.getServer().getScheduler();
     int x = c.getInt("droplocation.x");
     int y = c.getInt("droplocation.y");
     int z = c.getInt("droplocation.z");
@@ -35,24 +31,25 @@ public class Main extends JavaPlugin{
         Items.load();
         Recipes.load();
 
-        //Dropitem start.
-        scheduler.scheduleSyncRepeatingTask(this, new Runnable(){
+        //Drop Item start.
+        Bukkit.getScheduler().scheduleSyncRepeatingTask(this, new Runnable() {
             @Override
-        public void run(){
-                if(drop == true){
+            public void run() {
+                if (drop == true) {
                     reloadConfig();
                     Bukkit.getWorld(world).dropItem(new Location(Bukkit.getWorld(world), x, y, z), Items.SILVER);
-                }else{
+                } else {
 
                 }
             }
         }, 0L, 5L);
-        scheduler.scheduleSyncRepeatingTask(this, new Runnable(){
-            public void run(){
+
+        Bukkit.getScheduler().scheduleSyncRepeatingTask(this, new Runnable() {
+            @Override
+            public void run() {
 
             }
-        }, 0, 1L);
-
+        }, 0L, 1L);
     }
     public void onDisable() {
         plugin = null;
@@ -67,15 +64,13 @@ public class Main extends JavaPlugin{
                 Double x = p.getLocation().getX();
                 Double y = p.getLocation().getY();
                 Double z = p.getLocation().getZ();
-
                 String world = p.getWorld().getName();
+
                 c.set("droplocation.world", world);
                 c.set("droplocation.x", x.intValue());
                 c.set("droplocation.y", y.intValue());
                 c.set("droplocation.z", z.intValue());
-                p.sendRawMessage(x.toString());
-                p.sendRawMessage(y.toString());
-                p.sendRawMessage(z.toString());
+
                 this.saveConfig();
             }
         }
@@ -123,6 +118,11 @@ public class Main extends JavaPlugin{
             }
             else if(args[0].equalsIgnoreCase("SILVER")){
                 p.getInventory().addItem(Items.SILVER);
+                p.updateInventory();
+                return true;
+            }
+            else if(args[0].equalsIgnoreCase("juice")){
+                p.getInventory().addItem(Items.RAGE_JUICE);
                 p.updateInventory();
                 return true;
             }
