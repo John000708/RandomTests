@@ -22,7 +22,7 @@ public class Main extends JavaPlugin{
 
     public static String nmsver;
 
-    boolean works = true;
+    private static boolean works = true;
 
     boolean drop = false;
     int x = c.getInt("droplocation.x");
