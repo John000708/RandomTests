@@ -14,7 +14,6 @@ public class Items {
     public static ItemStack MINER;
     public static ItemStack CHIP;
     public static ItemStack SILVER;
-    public static ItemStack SOLAR_FURNACE;
     public static ItemStack RAGE_JUICE;
 
     private static ItemMeta meta;
@@ -42,12 +41,6 @@ public class Items {
         meta.setDisplayName(ChatColor.BLUE + "Silver");
         meta.addEnchant(Enchantment.DAMAGE_ALL, 5, true);
         SILVER.setItemMeta(meta);
-
-        /* SOLAR_FURNACE */
-        SOLAR_FURNACE = new ItemStack(Material.FURNACE);
-        meta = SOLAR_FURNACE.getItemMeta();
-        meta.setDisplayName(ChatColor.GOLD + "Solar Furnace");
-        SOLAR_FURNACE.setItemMeta(meta);
 
         /* RAGE_JUICE */
         RAGE_JUICE = new ItemStack(Material.POTION);
