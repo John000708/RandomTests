@@ -10,3 +10,4 @@ commands:
   show:
   giveitem:
     usage: /giveitem <MINER|CHIP|SILVER|SOLAR_FURNACE>
+  test:
